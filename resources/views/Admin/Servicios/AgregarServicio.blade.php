@@ -5,6 +5,7 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row">
+
             <form method="POST" action="{{route('AddServicios')}}" enctype="multipart/form-data">
             {{ csrf_field() }}
                 <div class="col-sm-9 col-md-10 col-lg-10 mx-auto" >

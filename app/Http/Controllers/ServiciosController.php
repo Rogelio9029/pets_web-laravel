@@ -117,5 +117,13 @@ class ServiciosController extends Controller
         }
     }
 
+    public function DeleteMascota($id)
+    {
+        $Servicio = Servicios::find($id);
+        
+        $Servicio->delete();
+        return redirect('/TblServicios');
+    }
+
 
 }

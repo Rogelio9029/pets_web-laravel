@@ -34,7 +34,7 @@
     <!-- Team Member 3 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <a href="#">
+        <a href="{{route('TblMascotas')}}">
           <img src="https://cdn.pixabay.com/photo/2017/08/07/18/57/dog-2606759_960_720.jpg" class="card-img-top" alt="..." height="170">
         </a>
         <div class="card-body text-center">
@@ -48,8 +48,8 @@
     <!-- Team Member 4 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <a href="#">
-          <img src="https://cdn.pixabay.com/photo/2017/06/20/22/14/men-2425121_960_720.jpg" class="card-img-top" alt="..." height="170">
+        <a href="{{route('TblUsuarios')}}">
+          <img src="https://cdn.pixabay.com/photo/2017/03/13/17/26/ecommerce-2140603_960_720.jpg" class="card-img-top" alt="..." height="170">
         </a>
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Clientes</h5>

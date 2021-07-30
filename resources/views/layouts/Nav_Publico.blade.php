@@ -70,7 +70,6 @@
                             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li><a href="{{route('home')}}" class="nav-link">Inicio</a></li>   
                                 <li><a href="{{route('Servicios')}}" class="nav-link">Servicios</a></li>                            
-                                <!-- <li><a href="#" class="nav-link">Mascotas</a></li> -->
                                 <li><a href="{{route('Contacto')}}" class="nav-link">Contactanos</a></li>
                                 <li><a href="{{route('Acerca')}}" class="nav-link">Nosotros</a></li>
                                 
@@ -78,17 +77,17 @@
                             <li class="align-items-center">
                                 <button
                                         type="button"
-                                        class="btn btn-primary nav-link"
+                                        class="btn btn-primary btn-sm nav-link"
                                         onclick="location.href='{{ route('login') }}'"
                                 >{{ __('Login') }}
                                         <i class="fas fa-user-alt"></i>
                                     </button>
                             </li>
                             @if (Route::has('register'))
-                                <li class="align-items-center m-md-2 mt-sm-2">
+                                <li class="align-items-center m-md-1 mt-sm-1">
                                     <button
                                         type="button"
-                                        class="btn btn-primary nav-link"
+                                        class="btn btn-primary btn-sm nav-link"
                                         onclick="location.href='{{ route('register') }}'"
                                     >{{ __('Registrar') }}
                                         <i class="fas fa-user-circle"></i>
@@ -96,25 +95,28 @@
                                 </li>
                             @endif
                             @else
-                            <li class="nav-item">
-                                
+                            <li class="align-items-center">                            
                                     <button
                                         type="button"
-                                        class="btn btn-primary nav-link rounded"
+                                        class="btn btn-primary btn-sm"
                                         onclick="location.href='{{ route('Sesion') }}'">
 
                                     {{ Auth::user()->name }}
-                                        <i class="fas fa-user-circle"></i>
                                     </button>
 
-                                <div class="menu menu-right">
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <button
+                                        type="button"
+                                            class="btn btn-primary btn-sm"
+                                            onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"
+                                                >{{ __('Cerrar Sesion') }}
+                                    </button>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
                             </li>
                         @endguest
-                                <li class="align-items-center m-md-2 mt-sm-2">
+                                <li class="align-items-center m-md-1 mt-sm-1">
 
                                    <div class="input-group">
                                         <div class="form-outline">
@@ -168,7 +170,7 @@
 
 
 
-            <footer class="mt-5 site-footer">
+            <footer class="mt-1 site-footer">
 
                 <div class="container">
 
@@ -260,6 +262,7 @@
         <script src="/Public_design/Js/aos.js"></script>
         <script src="/Public_design/Js/jquery.sticky.js"></script>
         <script src="/Public_design/Js/main.js"></script>
+        
 
         <!-- pagos paypal -->
         

@@ -47,7 +47,7 @@
                         <p class="card-text text-center">{{ $Servicio -> Descripcion }}</p>
                         <h4 class="card-title pricing-card-title text-center" style="">${{ $Servicio -> Costo }}.00 MXN</h4>
                         
-                        <a type="button" href="{{route('Buying' , $Servicio->id)}}" class="w-100 btn" style="background-color: #0099ff; color: white;">Solicitar</a>
+                        <a type="button" href="{{route('FrmCita' , $Servicio->id)}}" class="w-100 btn" style="background-color: #0099ff; color: white;">Solicitar</a>
                     </div>
                     
                 </div>

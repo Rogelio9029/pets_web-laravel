@@ -2,9 +2,15 @@
 
 @section('content')
 <center>
-<div class="container-fluid">
+<div class="container-fluid mb-4">
     <div class="container">
         <div class="row">
+
+            <div class="alert alert-warning mx-auto" role="alert">
+                <h4 class="alert-heading">Importante</h4>
+                <p>Favor de indicar si su mascota es agresiva en la descripcion para evitar inconvenientes en futuras ocaciones</p>
+            </div>
+
             <form method="POST" action="{{route('AddMascota')}}" enctype="multipart/form-data">
             {{ csrf_field() }}
                 <div class="col-sm-9 col-md-10 col-lg-10 mx-auto" >
@@ -21,11 +27,6 @@
                                         </div>
 
                                         <div class="form-group col-md-6">
-                                        <label >Descripcion de la mascota</label>
-                                        <input type="text" class="form-control" name="Descripcion" id="Descripcion" placeholder="Descripcion de la mascota">
-                                        </div>
-
-                                        <div class="form-group col-md-6">
                                         <label >Edad de la mascota</label>
                                         <input type="text" class="form-control" name="Edad" id="Edad" placeholder="Edad de la mascota">
                                         </div>
@@ -38,6 +39,11 @@
                                         <div class="form-group col-md-6">
                                         <label >Raza de la mascota</label>
                                         <input type="text" class="form-control" name="Raza" id="Raza" placeholder="Raza de la mascota">
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                        <label >Descripcion de la mascota</label>
+                                        <textarea  rows="5" type="text" class="form-control" name="Descripcion" id="Descripcion" placeholder="Descripcion de la mascota" ></textarea>
                                         </div>
 
                                         <div class="form-group col-md-6">

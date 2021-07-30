@@ -56,6 +56,12 @@
       </div>
 
       <li class="nav-item active">
+        <a class="nav-link" href="{{route('Sesion')}}">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Mis Mascotas</span></a>
+      </li> 
+
+      <li class="nav-item active">
         <a class="nav-link" href="{{route('Frm_AddMascota')}}">
           <i class="fas fa-fw fa-folder"></i>
           <span>Agregar Mascota</span></a>
@@ -82,9 +88,9 @@
       </div>
 
       <li class="nav-item active">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="{{route('MisCitas')}}">
               <i class="fas fa-fw fa-folder"></i>
-              <span>Nuevo Huesped</span></a>
+              <span>Mis citas</span></a>
       </li>
  
 
@@ -125,20 +131,20 @@
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-            <img class="img-profile rounded-circle"
-                src="/Public_design/Img/Icons/perro.png">
+            
+            <img class="img-profile rounded-circle" src="/storage/Img/Img_User/{{ Auth::user()->foto }}"/>
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="{{route('Frm_UpdateUser' , Auth::user()->id)}}">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
+                Perfil
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
+                Cerrar
             </a>
         </div>
     </li>
@@ -163,7 +169,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">TATAKAE EREN</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Vuelve pronto!!!</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">x</span>
                     </button>
@@ -207,6 +213,11 @@
 
   <!-- Page level custom scripts -->
   <script src="/Admin_desing/js/demo/datatables-demo.js"></script>
+
+  <!-- Alert -->
+  <link href="https://cdn.jsdelivr.net/sweetalert2/6.0.1/sweetalert2.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/sweetalert2/6.0.1/sweetalert2.min.js"></script>
 </body>
 
 </html>

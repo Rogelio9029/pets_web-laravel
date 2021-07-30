@@ -12,7 +12,7 @@
                      <div class="carousel-caption relative">
                         <h1></h1>
                        <h1>OBTEN INFORMACION DE NUESTROS SERVICIOS AQUI Previous</h1>
-                        <a  href="#">Leer Mas</a>
+                        <a  href="{{route('Servicios')}}">Leer Mas</a>
                      </div>
                   </div>
                </div>
@@ -21,7 +21,7 @@
                   <div class="container">
                      <div class="carousel-caption relative">
                         <h1>OBTEN INFORMACION DE NUESTRAS OFERTAS AQUI</h1>
-                        <a  href="#">Leer Mas</a>
+                        <a  href="{{route('Servicios')}}">Leer Mas</a>
                      </div>
                   </div>
                </div>
@@ -31,7 +31,7 @@
                      <div class="carousel-caption relative">
                         <h1>SOMOS LOS NUMERO UNO EN CUIDADO DE MASCOTAS</h1>
                         <h2 style="color:white"> ¿quieres saber mas de nuestro negocio?</h2>
-                        <a  href="#">Leer mas</a>
+                        <a  href="{{route('Acerca')}}">Leer mas</a>
                      </div>
                   </div>
                </div>

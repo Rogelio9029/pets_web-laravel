@@ -33,7 +33,15 @@
             <td>{{ $Servicio -> Descripcion }}</td>
             <td>{{ $Servicio -> Costo }}</td>
             <td><img src="{{ asset('/storage/Img/Img_Servicios/'.$Servicio['Img']) }}" alt="" width="80px" class=""></td>
-            <td><a href="{{route('Frm_EditServicios' , $Servicio->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+            <td>
+              <a href="{{route('Frm_EditServicios' , $Servicio->id)}}" class="btn btn-success mb-1">Editar</a>
+              <form method="POST" action="{{route('DeleteMascota' , $Servicio->id)}}">
+              
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form>
+            </td>
             
         </tr>
         @endforeach

@@ -20,18 +20,13 @@
     @else
             @foreach ($mascotas as $mascota)
                 <div class="card col-xl-3 col-md-6 mb-4">
-                    <img src="{{ asset('/storage/Img/Img_Mascotas/'.$mascota['imagen']) }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('/storage/Img/Img_Mascotas/'.$mascota['imagen']) }}" class="card-img-top mt-3" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-center">{{ $mascota -> nombre_mascota }}</h5>
-                        <p class="card-text">{{ $mascota -> Descripcion }}</p>
+                        <h4 class="card-title text-center">{{ $mascota -> nombre_mascota }}</h4>
+                        <figcaption class="blockquote-footer text-center"><cite title="Source Title">{{ $mascota -> Descripcion }}</cite></figcaption>
                     </div>
                     <div class="card-body text-center">
-                        <h6 class="card-title">Raza: {{ $mascota -> raza }}</h6>
-                        <h6 class="card-title">Edad: {{ $mascota -> edad }}</h6>
-                        <h6 class="card-title">Peso: {{ $mascota -> peso }}</h6>
-                    </div>
-                    <div class="card-body text-center">
-                    <a href="#" class="btn btn-primary">Editar datos</a>
+                    <a href="{{route('Frm_UpdateMascota' , $mascota->id)}}" class="btn btn-primary">Editar datos</a>
                     </div>
                 </div>
             @endforeach

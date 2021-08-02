@@ -26,7 +26,17 @@
         <tr>
             <td>{{ $Mascota -> name }}</td>
             <td>{{ $Mascota -> email }}</td>
-            <td>{{ $Mascota -> telefono }}</td>
+            <td>
+            @if($Mascota -> telefono == null)
+            
+              No tiene telefono registrado
+            
+            @else
+            
+              {{ $Mascota -> telefono }}
+            
+            @endif
+            </td>
             <td>{{ $Mascota -> nombre_mascota }}</td>
             <td><img src="{{ asset('/storage/Img/Img_Mascotas/'.$Mascota->imagen) }}" class="img-fluid rounded mx-auto" width="120px" height="80px"></td>
         </tr>

@@ -9,6 +9,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/Servicios', [App\Http\Controllers\HomeController::class, 'Servicios'])->name('Servicios');
+    Route::get('/AllServicios{id}', [App\Http\Controllers\HomeController::class, 'AllServicios'])->name('AllServicios');
     Route::get('/Contacto', [App\Http\Controllers\HomeController::class, 'Contacto'])->name('Contacto');
     Route::get('/Acerca', [App\Http\Controllers\HomeController::class, 'Acerca'])->name('Acerca');
 
@@ -32,10 +33,9 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 
         //Pagos
         Route::get('/FrmCita/{id}', [App\Http\Controllers\PayPalController::class, 'FrmCita'])->name('FrmCita');
-
         Route::get('/Pagar/{id}', [App\Http\Controllers\PayPalController::class, 'Pagar'])->name('Pagar');
         Route::get('/PagoExitoso/{id}', [App\Http\Controllers\PayPalController::class, 'PagoExitoso'])->name('PagoExitoso');
-
+        Route::Post('/Cita/{id}', [App\Http\Controllers\PayPalController::class, 'Cita'])->name('Cita');
         //Citas
         Route::get('/MisCitas', [App\Http\Controllers\PayPalController::class, 'MisCitas'])->name('MisCitas');
 
@@ -47,7 +47,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::post('/AddServicios', [App\Http\Controllers\ServiciosController::class, 'AddServicios'])->name('AddServicios');
     Route::get('/Frm_EditServicios/{id}', [App\Http\Controllers\ServiciosController::class, 'Frm_EditServicios'])->name('Frm_EditServicios');
     Route::put('/EditServicios/{id}', [App\Http\Controllers\ServiciosController::class, 'EditServicios'])->name('EditServicios');
-    Route::delete('/DeleteMascota/{id}', [App\Http\Controllers\ServiciosController::class, 'DeleteMascota'])->name('DeleteMascota');
+    Route::delete('/DeleteServicio/{id}', [App\Http\Controllers\ServiciosController::class, 'DeleteServicio'])->name('DeleteServicio');
     
     //Mascotas.Admin
     Route::get('/TblMascotas', [App\Http\Controllers\AdminController::class, 'TblMascotas'])->name('TblMascotas');

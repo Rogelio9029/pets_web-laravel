@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Mascotas;
 use App\Models\Servicios;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -47,6 +48,8 @@ class ClienteController extends Controller
             $fileNameWithTheExtension = request('file')->getClientOriginalName();
             $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
             $extension = request('file')->getClientOriginalExtension();
+
+
             $newFileName = $fileName .'.' . $extension;
             $path = request('file')->storeAs('public/Img/Img_Mascotas', $newFileName);
     
@@ -115,6 +118,7 @@ class ClienteController extends Controller
                 $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
                 $extension = request('file')->getClientOriginalExtension();
                 $newFileName = $fileName .'.' . $extension;
+
                 $path = request('file')->storeAs('public/Img/Img_Mascotas', $newFileName);
 
                 $Mascota->imagen = $newFileName;
@@ -138,6 +142,14 @@ class ClienteController extends Controller
         }else{
             return view('Index');
         }
+    }
+
+    public function DeleteMascota($id)
+    {
+        $Mascota = Mascotas::find($id);
+        
+        $Mascota->delete();
+        return redirect('/Sesion');
     }
 
     public function Frm_UpdateUser($id)

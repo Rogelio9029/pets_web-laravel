@@ -24,7 +24,17 @@
         <tr>
             <td>{{ $Usuario -> name }}</td>
             <td>{{ $Usuario -> email }}</td>
-            <td>{{ $Usuario -> telefono }}</td>
+            <td>
+            @if($Usuario -> telefono == null)
+            
+              No tiene telefono registrado
+            
+            @else
+            
+              {{ $Usuario -> telefono }}
+            
+            @endif
+            </td>
         </tr>
         @endforeach
         </tbody>

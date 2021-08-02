@@ -26,4 +26,9 @@ class HomeController extends Controller
 
     public function Acerca(){return view('Publico/Acerca');}
 
+    public function AllServicios($id){
+        $Servicios = Servicios::get()->where("id", 2);
+        return $Servicios;
+    }
+
 }

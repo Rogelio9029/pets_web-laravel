@@ -117,7 +117,7 @@ class ServiciosController extends Controller
         }
     }
 
-    public function DeleteMascota($id)
+    public function DeleteServicio($id)
     {
         $Servicio = Servicios::find($id);
         

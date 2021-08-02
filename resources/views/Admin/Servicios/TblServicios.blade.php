@@ -35,7 +35,7 @@
             <td><img src="{{ asset('/storage/Img/Img_Servicios/'.$Servicio['Img']) }}" alt="" width="80px" class=""></td>
             <td>
               <a href="{{route('Frm_EditServicios' , $Servicio->id)}}" class="btn btn-success mb-1">Editar</a>
-              <form method="POST" action="{{route('DeleteMascota' , $Servicio->id)}}">
+              <form method="POST" action="{{route('DeleteServicio' , $Servicio->id)}}">
               
                 @csrf
                 @method('DELETE')

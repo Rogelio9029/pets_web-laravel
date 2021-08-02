@@ -185,7 +185,7 @@
 </div>
 
 </section>
-
+<!-- 
             <section class="bg-light">
 
                 <div class="container">
@@ -284,7 +284,7 @@
 
                 </div>
 
-            </section>
+            </section> -->
 
             <section class="site-blocks-cover bg-light">
 
